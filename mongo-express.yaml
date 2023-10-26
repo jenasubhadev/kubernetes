@@ -21,15 +21,9 @@ spec:
         - containerPort: 8081
         env:
         - name: ME_CONFIG_MONGODB_ADMINUSERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mongodb-secret
-              key:  mongo-root-username
+          value: admin
         - name: ME_CONFIG_MONGODB_ADMINPASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mongodb-secret
-              key:  mongo-root-password
+          value: pass
         - name: ME_CONFIG_MONGODB_SERVER
           valueFrom:
             configMapKeyRef:
